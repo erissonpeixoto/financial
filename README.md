@@ -67,6 +67,8 @@ Things you may want to cover:
 - **Exemplo**:
   ```bash
   docker compose run web rails db:create
+  ou
+  docker compose run web bundle exec rails db:create
   ```
 
 ### 9. `docker compose run web rails db:migrate`
@@ -74,6 +76,8 @@ Things you may want to cover:
 - **Exemplo**:
   ```bash
   docker compose run web rails db:migrate
+  ou
+  docker compose run web bundle exec rails db:migrate
   ```
 
 ### 10. `docker compose exec web curl http://localhost:3000`
