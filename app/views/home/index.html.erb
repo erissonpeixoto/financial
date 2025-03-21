@@ -1,0 +1,10 @@
+<p>Home#index</p>
+<!-- app/views/home/index.html.erb -->
+<h1>Bem-vindo à Minha Aplicação</h1>
+<% if current_user %>
+  <p>Olá, <%= current_user.email_address %>!</p>
+  <%= button_to "Sair", session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Entrar', new_session_path %>
+  <%= link_to 'Registrar', new_registration_path %>
+<% end %>
