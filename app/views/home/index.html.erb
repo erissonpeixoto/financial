@@ -1,10 +1,15 @@
-<p>Home#index</p>
-<!-- app/views/home/index.html.erb -->
-<h1>Bem-vindo à Minha Aplicação</h1>
-<% if current_user %>
-  <p>Olá, <%= current_user.email_address %>!</p>
-  <%= button_to "Sair", session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Entrar', new_session_path %>
-  <%= link_to 'Registrar', new_registration_path %>
-<% end %>
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+  <div class="text-center bg-white p-8 rounded-lg shadow-md">
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">Bem-vindo à Minha Aplicação Financeira</h1>
+
+    <% if current_user %>
+      <p class="text-lg text-gray-700">Olá, <%= current_user.email_address %>!</p>
+      <%= button_to "Sair", session_path, method: :delete, class: "mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition" %>
+    <% else %>
+      <div class="mt-4 space-x-4">
+        <%= link_to 'Entrar', new_session_path, class: "px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition" %>
+        <%= link_to 'Registrar', new_registration_path, class: "px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition" %>
+      </div>
+    <% end %>
+  </div>
+</div>
