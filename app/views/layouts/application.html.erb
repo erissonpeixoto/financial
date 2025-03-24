@@ -23,6 +23,31 @@
   </head>
 
   <body>
+    <% if current_user %>
+      <nav class="bg-blue-500 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+          <a href="<%= root_path %>" class="text-white text-lg font-semibold">Minha Aplicação Financeiro</a>
+          
+          <div class="relative">
+            <button id="menu-button" class="text-white focus:outline-none">
+              <span>☰</span>
+            </button>
+            
+            <div id="menu" class="hidden absolute right-0 bg-white shadow-md rounded mt-2 w-48">
+              <p class="px-4 py-2 text-gray-700">Olá, <%= current_user.email_address %></p>
+              <%= button_to "Sair", session_path, method: :delete, class: "block w-full text-left px-4 py-2 text-red-500 hover:bg-red-100" %>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+          document.getElementById('menu').classList.toggle('hidden');
+        });
+      </script>
+    <% end %>
+
     <main class="flex items-center justify-center min-h-screen">
       <%= yield %>
     </main>
