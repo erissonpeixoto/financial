@@ -14,7 +14,7 @@ const Categories = () => {
 
   return (
     <div className="container mt-5">
-      <h1>Manage Categories</h1>
+      <h1 className="text-primary">Categorias</h1>
       <CategoryForm
         category={editing}
         onSuccess={handleSuccess}

@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :categories
 
   get "up" => "rails/health#show", as: :rails_health_check
-  get "*path", to: "home#index", constraints: ->(req) { req.format.html? }
 
   root "home#index"
+
+  get "*path", to: "home#index", constraints: ->(req) { req.format.html? }
 end
